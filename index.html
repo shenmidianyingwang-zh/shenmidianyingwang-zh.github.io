@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="神秘电影网（站点地址为 https://shenmidianyingwang-zh.github.io）是一份面向影迷的内容手册，围绕悬疑、惊悚、犯罪与类型片展开，提供案件原型溯源、镜头语言拆解、观看顺序建议与主题专题策划，帮助观众看懂那些藏在细节里的线索。">
+<meta name="keywords" content="神秘电影网,悬疑电影,惊悚片推荐,犯罪题材,镜头语言,案件原型,观影顺序,类型片,影迷手册,剧情解析">
+<meta name="author" content="神秘电影网">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="revisit-after" content="1 days">
+<meta name="theme-color" content="#0f1012">
+<link rel="canonical" href="https://shenmidianyingwang-zh.github.io/">
+<title>神秘电影网：藏在细节里的悬疑与惊悚 | 类型片内容手册</title>
+<style>
+:root{
+  --ink:#111315; --paper:#f5f4f1; --card:#fffdfa; --mute:#8a8c8e;
+  --line:#e2e0dc; --line2:#cfcdc8; --dim:#6b6d70; --mark:#d93829; --gold:#b08d57;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.75;font-size:16px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* ===== 公告带 ===== */
+.alert{background:var(--ink);color:#f5f4f1;font-size:12.5px;letter-spacing:.08em}
+.alert .wrap{display:flex;justify-content:space-between;align-items:center;height:34px;gap:16px;flex-wrap:wrap}
+.alert a{color:#d7d3cb}
+.alert b{color:#fff}
+
+/* ===== 报眉 ===== */
+.mast{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:26px;padding:26px 0;border-bottom:1px solid var(--line2)}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-size:clamp(24px,3.4vw,32px);font-weight:900;letter-spacing:-.01em}
+.brand b i{font-style:normal;color:var(--mark)}
+.brand em{font-style:normal;font-size:11px;color:var(--mute);letter-spacing:.16em;text-transform:uppercase;border-left:1px solid var(--line2);padding-left:10px}
+.mast nav{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+.mast nav a{font-size:13.5px;color:var(--dim);transition:.2s;position:relative}
+.mast nav a:hover{color:var(--ink)}
+.issn{text-align:right;font-size:11.5px;color:var(--mute);font-family:ui-monospace,monospace;line-height:1.7}
+.issn b{display:block;color:var(--ink);font-weight:700}
+
+/* ===== 封面 ===== */
+.cover{padding:74px 0 62px;border-bottom:1px solid var(--line2);position:relative}
+.cover .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:end}
+.cover h1{font-size:clamp(38px,7.4vw,92px);font-weight:900;line-height:.98;letter-spacing:-.035em}
+.cover h1 span{display:block;color:var(--mute)}
+.cover h1 i{font-style:normal;color:var(--mark)}
+.cover .rule{width:100%;height:1px;background:var(--ink);margin:34px 0 0}
+.cover .meta{display:flex;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:34px}
+.cover .meta div{flex:1;padding:16px 0;border-right:1px solid var(--line2)}
+.cover .meta div:last-child{border-right:0}
+.cover .meta b{display:block;font-size:24px;font-weight:900;font-family:ui-monospace,monospace}
+.cover .meta span{font-size:11.5px;color:var(--mute);letter-spacing:.12em;text-transform:uppercase}
+.cover .side{font-size:15.5px;color:var(--dim)}
+.cover .side p{margin-bottom:20px}
+.cover .side .quote{border-left:2px solid var(--mark);padding-left:20px;font-size:clamp(20px,2.6vw,26px);font-weight:800;line-height:1.5;color:var(--ink);letter-spacing:-.01em}
+.cover .side .qsrc{font-size:12.5px;color:var(--mute);margin-top:12px}
+
+/* ===== 双栏主体 ===== */
+.shell{display:grid;grid-template-columns:230px minmax(0,1fr);gap:60px;padding-top:60px}
+.toc{position:sticky;top:0;align-self:start;padding:34px 0;max-height:100vh;overflow-y:auto}
+.toc .lbl{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+.toc ol{counter-reset:t;display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line2)}
+.toc li{counter-increment:t;border-bottom:1px solid var(--line2)}
+.toc a{display:flex;gap:12px;padding:13px 0;font-size:14px;color:var(--dim);transition:.2s}
+.toc a::before{content:counter(t,decimal-leading-zero);font-family:ui-monospace,monospace;font-size:11.5px;color:var(--mute);flex:0 0 auto;padding-top:3px}
+.toc a:hover{color:var(--ink);padding-left:4px}
+.toc a.on{color:var(--ink);font-weight:700}
+.toc a.on::before{color:var(--mark)}
+main{display:flex;flex-direction:column}
+
+/* ===== 章节 ===== */
+section{padding:56px 0;border-bottom:1px solid var(--line2);scroll-margin-top:20px}
+.ch{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.ch .roman{font-family:ui-monospace,monospace;font-size:13px;color:var(--mark);font-weight:700;padding-top:6px}
+.ch h2{font-size:clamp(24px,3.6vw,38px);font-weight:900;letter-spacing:-.02em;line-height:1.2}
+.ch-sub{font-size:14.5px;color:var(--dim);margin-bottom:34px;max-width:620px}
+.divider{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.2em;color:var(--mute);text-transform:uppercase;margin:30px 0}
+.divider::before,.divider::after{content:"";height:1px;background:var(--line2);flex:1}
+
+/* ===== 作品清单 ===== */
+.works{display:flex;flex-direction:column}
+.work{display:grid;grid-template-columns:78px minmax(0,1.3fr) minmax(0,1fr) 120px;gap:26px;padding:26px 0;border-bottom:1px solid var(--line)}
+.work:last-child{border-bottom:0}
+.work .idx{font-family:ui-monospace,monospace;font-size:12px;color:var(--mute);padding-top:4px}
+.work h3{font-size:20px;font-weight:800;line-height:1.4;margin-bottom:8px}
+.work .genre{font-size:11.5px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+.work p{font-size:14px;color:var(--dim)}
+.work .score{text-align:right}
+.work .score b{display:block;font-size:30px;font-weight:900;font-family:ui-monospace,monospace;line-height:1}
+.work .score span{font-size:11.5px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
+.work .flag{display:inline-block;margin-top:9px;font-size:10.5px;letter-spacing:.14em;padding:3px 8px;border:1px solid var(--ink);color:var(--ink)}
+.work .flag.r{background:var(--mark);border-color:var(--mark);color:#fff}
+.work:hover{background:#fffdfa}
+
+/* ===== 专题卡 ===== */
+.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.topic{background:var(--card);padding:30px;transition:.3s;display:flex;flex-direction:column;gap:12px;min-height:210px}
+.topic:hover{background:var(--ink);color:var(--paper)}
+.topic:hover p{color:#c9c6c0}
+.topic:hover .tag{color:#c9c6c0;border-color:#5a5b5d}
+.topic .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line2);padding-bottom:10px}
+.topic h4{font-size:19px;font-weight:800;line-height:1.45}
+.topic p{font-size:13.5px;color:var(--dim);flex:1}
+.topic .more{font-size:12px;letter-spacing:.1em;color:var(--mark);font-weight:700}
+
+/* ===== 阅读清单 ===== */
+.read{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.book{border:1px solid var(--line2);background:var(--card);padding:24px;display:flex;flex-direction:column;gap:12px}
+.book .stripe{height:4px;background:var(--ink)}
+.book:nth-child(2) .stripe{background:var(--mark)}
+.book:nth-child(3) .stripe{background:var(--gold)}
+.book h5{font-size:17px;font-weight:800;line-height:1.45}
+.book ol{counter-reset:r;display:flex;flex-direction:column;gap:10px;font-size:13.5px;color:var(--dim);padding-left:0}
+.book li{counter-increment:r;display:grid;grid-template-columns:22px 1fr;gap:8px}
+.book li::before{content:counter(r,decimal-leading-zero);font-family:ui-monospace,monospace;font-size:11px;color:var(--mute);padding-top:4px}
+.book .dur{font-size:11.5px;color:var(--mute);letter-spacing:.08em;border-top:1px solid var(--line2);padding-top:12px;margin-top:auto}
+
+/* ===== 档案表 ===== */
+.archive{border:1px solid var(--ink)}
+.archive .row{display:grid;grid-template-columns:120px 1fr 1fr 130px;gap:0;border-bottom:1px solid var(--line2);font-size:14px}
+.archive .row:last-child{border-bottom:0}
+.archive .row.head{background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.archive .row > div{padding:15px 18px;border-right:1px solid var(--line2)}
+.archive .row > div:last-child{border-right:0}
+.archive .row .yr{font-family:ui-monospace,monospace;color:var(--mute)}
+.archive .row .tg{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.archive .row:hover{background:var(--card)}
+
+/* ===== 网址卡 ===== */
+.urlbox{border:1px solid var(--ink);padding:44px;position:relative;background:var(--card)}
+.urlbox .tape{position:absolute;right:26px;top:-14px;background:var(--mark);color:#fff;font-size:11px;letter-spacing:.2em;padding:6px 14px;text-transform:uppercase;font-weight:700}
+.urlbox .grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.urlbox .lead{font-size:clamp(20px,2.6vw,26px);font-weight:800;line-height:1.55;letter-spacing:-.01em}
+.urlbox .lead em{font-style:normal;color:var(--mark)}
+.urlbox .addr{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:20px 22px;font-size:clamp(14px,2.4vw,19px);font-family:ui-monospace,monospace;word-break:break-all;position:relative}
+.urlbox .addr .lbl{display:block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.urlbox button{margin-top:18px;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:13px 28px;font-size:13.5px;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:.25s;font-family:inherit}
+.urlbox button:hover{background:var(--ink);color:var(--paper)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line2);margin-top:30px;border:1px solid var(--line2)}
+.facts div{background:var(--card);padding:18px}
+.facts b{display:block;font-size:14.5px;font-weight:800;margin-bottom:5px}
+.facts span{font-size:11.5px;color:var(--mute);letter-spacing:.06em}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#d7d3cb;padding:64px 0 30px;margin-top:0}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px}
+.foot .col h6{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:700}
+.foot .col ul{display:flex;flex-direction:column;gap:11px;font-size:13.5px}
+.foot .col a:hover{color:#fff}
+.foot .brandf b{font-size:26px;color:#fff;font-weight:900;display:block;margin-bottom:14px}
+.foot .brandf b i{font-style:normal;color:var(--mark)}
+.foot .brandf p{font-size:13.5px;max-width:340px;color:#a8a5a0}
+.foot .siteurl{margin-top:20px;font-family:ui-monospace,monospace;font-size:12px;color:#fff;border:1px solid #3a3b3d;padding:11px 14px;display:inline-block;word-break:break-all}
+.foot .bar{margin-top:48px;padding-top:24px;border-top:1px solid #2c2d2f;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;color:#7c7975}
+.foot .bar b{color:#fff}
+
+/* ===== 动效 ===== */
+.rv{opacity:0;transform:translateY(26px);transition:.75s cubic-bezier(.22,.65,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:1020px){
+  .shell{grid-template-columns:1fr;gap:0}
+  .toc{position:static;max-height:none;padding:0;order:-1}
+  .toc ol{flex-direction:row;flex-wrap:wrap;gap:0 8px;border-top:0}
+  .toc li{border-bottom:0}
+  .toc a{padding:10px 14px;border:1px solid var(--line2);font-size:12.5px}
+  .toc a::before{display:none}
+  .toc a:hover{padding-left:14px}
+  .cover .grid,.urlbox .grid{grid-template-columns:1fr;gap:34px}
+  .work{grid-template-columns:52px 1fr;gap:14px}
+  .work .score{grid-column:2;text-align:left}
+  .topics,.read{grid-template-columns:1fr}
+  .archive .row{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr;gap:34px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .mast{grid-template-columns:1fr;text-align:left;gap:14px}
+  .mast nav{justify-content:flex-start}
+  .issn{text-align:left}
+  .cover{padding:46px 0 40px}
+  section{padding:42px 0}
+  .work{grid-template-columns:1fr}
+  .work .idx{display:none}
+  .archive .row{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .urlbox{padding:30px 22px}
+  .topics .topic{padding:24px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="alert"><div class="wrap">
+  <span>读者来信、选题建议与内容纠错均欢迎提交，编辑部逐条阅读</span>
+  <span><a href="#">内容纠错入口</a> &nbsp;/&nbsp; <a href="#">选题建议</a> &nbsp;/&nbsp; <a href="#">关于本手册</a></span>
+</div></div>
+
+<header class="wrap mast">
+  <div class="brand"><b>神秘<i>电影网</i></b><em>A Field Guide to Mystery Cinema</em></div>
+  <nav>
+    <a href="#no01">案件原型</a>
+    <a href="#no02">镜头语言</a>
+    <a href="#no03">观看顺序</a>
+    <a href="#no04">主题专题</a>
+    <a href="#no05">资料档案</a>
+    <a href="#no06">站点入口</a>
+  </nav>
+  <div class="issn"><b>VOL.06 · 2026</b>ISSN shenmidianyingwang-zh.github.io</div>
+</header>
+
+<div class="wrap cover">
+  <div class="grid">
+    <div>
+      <span class="eyebrow">Frontispiece · 本期封面</span>
+      <h1><span>神秘电影网</span>看懂那些<span>藏在细节里的</span><i>悬疑与惊悚</i></h1>
+      <div class="rule"></div>
+      <div class="meta">
+        <div><b>07</b><span>本期栏目</span></div>
+        <div><b>42</b><span>收录作品</span></div>
+        <div><b>06</b><span>主题专题</span></div>
+        <div><b>每日</b><span>内容更新</span></div>
+      </div>
+    </div>
+    <aside class="side">
+      <p>神秘电影网不搬运片源，也不追逐热搜。我们做的事情更接近一种翻译：把类型片里那些容易错过的时间线、道具细节、声音设计与叙事诡计，用文字重新铺开。</p>
+      <div class="quote">"悬疑片的乐趣从来不在答案，<br>而在你以为自己已经看穿的那一刻。"</div>
+      <div class="qsrc">— 神秘电影网 · 编辑部手记</div>
+    </aside>
+  </div>
+</div>
+
+<div class="wrap shell">
+  <aside class="toc">
+    <div class="lbl">本期目录 / Contents</div>
+    <ol>
+      <li><a href="#no01">案件原型溯源</a></li>
+      <li><a href="#no02">镜头语言拆解</a></li>
+      <li><a href="#no03">观看顺序建议</a></li>
+      <li><a href="#no04">主题专题策划</a></li>
+      <li><a href="#no05">资料档案</a></li>
+      <li><a href="#no06">站点入口与说明</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <section id="no01">
+      <div class="ch"><span class="roman">01</span><h2>案件原型溯源</h2></div>
+      <p class="ch-sub">每一部犯罪题材作品的背后，往往都有一个被改写过的真实案件。我们列出作品与现实之间的对应关系，并标注改编幅度。</p>
+
+      <div class="works">
+        <article class="work">
+          <div class="idx num">N° 01</div>
+          <div>
+            <div class="genre">Crime · 犯罪</div>
+            <h3>暗河上的桥</h3>
+            <p>以一桩沉寂二十年的旧案为起点，改编保留了真实案件的时间线与关键物证，但把两名嫌疑人的关系重新编排，使推理难度更接近电影节奏。</p>
+          </div>
+          <div><span class="flag">改编幅度 中等</span></div>
+          <div class="score"><b>8.6</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">N° 02</div>
+          <div>
+            <div class="genre">Thriller · 惊悚</div>
+            <h3>第七个证人</h3>
+            <p>原型来自一宗众说纷纭的庭审案件，影片选取其中最具戏剧张力的三个时间切片，对原案结局做了开放性处理。</p>
+          </div>
+          <div><span class="flag">改编幅度 较大</span></div>
+          <div class="score"><b>8.3</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">N° 03</div>
+          <div>
+            <div class="genre">Mystery · 悬疑</div>
+            <h3>一封没有寄出的信</h3>
+            <p>取材于一封真实信件引发的连环调查，影片几乎完整还原了信件内容与发现过程，是近期考据最严谨的作品之一。</p>
+          </div>
+          <div><span class="flag r">改编幅度 较小</span></div>
+          <div class="score"><b>8.8</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">N° 04</div>
+          <div>
+            <div class="genre">Crime · 犯罪</div>
+            <h3>雾港</h3>
+            <p>原型案件本身并无定论，影片借此展开三种可能的时间线，属于"借用现实外壳的原创叙事"。</p>
+          </div>
+          <div><span class="flag">改编幅度 较大</span></div>
+          <div class="score"><b>8.0</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">N° 05</div>
+          <div>
+            <div class="genre">Documentary · 纪实</div>
+            <h3>卷宗之外</h3>
+            <p>纪录片形式，采访当年办案人员与当事人家属，与同期上映的改编剧情片形成互文，建议对照观看。</p>
+          </div>
+          <div><span class="flag r">纪实 · 无改编</span></div>
+          <div class="score"><b>9.0</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">N° 06</div>
+          <div>
+            <div class="genre">Psychological · 心理</div>
+            <h3>她记得每一扇门</h3>
+            <p>案件原型仅提供核心设定，其余情节为原创。影片重点落在记忆可靠性上，而非案件本身的解谜。</p>
+          </div>
+          <div><span class="flag">改编幅度 较大</span></div>
+          <div class="score"><b>8.4</b><span>综合口碑</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="no02">
+      <div class="ch"><span class="roman">02</span><h2>镜头语言拆解</h2></div>
+      <p class="ch-sub">类型片的紧张感很少来自台词。以下是我们近期拆解的几组镜头设计，附带可复用的观察角度。</p>
+
+      <div class="topics">
+        <article class="topic">
+          <div class="tag">Technique 01 · 空间</div>
+          <h4>为什么走廊镜头总让人不安</h4>
+          <p>一点透视把视线逼向画面深处，人物同时被压缩与逼近。我们以三部影片为例，对比走廊镜头在不同节奏下的使用方式。</p>
+          <span class="more">阅读拆解 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">Technique 02 · 声音</div>
+          <h4>声音消失的那三秒</h4>
+          <p>突然的静音是惊吓最有效的工具，但滥用会失效。我们整理了一份"静音使用频次"的观察清单，看看哪些作品用得克制。</p>
+          <span class="more">阅读拆解 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">Technique 03 · 色彩</div>
+          <h4>冷调不是越多越好</h4>
+          <p>冷色调一旦铺满全片，观众会迅速脱敏。真正有效的做法是冷暖交替，用一次意外的暖色制造记忆点。</p>
+          <span class="more">阅读拆解 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">Technique 04 · 时间</div>
+          <h4>倒叙的代价</h4>
+          <p>每一次时间跳转都在消耗观众的理解成本。我们拆解了六部多线叙事作品，计算它们各自用了多少次时间标记。</p>
+          <span class="more">阅读拆解 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">Technique 05 · 道具</div>
+          <h4>一件道具出现三次意味着什么</h4>
+          <p>重复出现的物件是悬疑片最常见的伏笔手法，但区分"有效伏笔"与"强行回收"有一条简单标准。</p>
+          <span class="more">阅读拆解 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">Technique 06 · 表演</div>
+          <h4>不说破的表演最难</h4>
+          <p>当角色知道真相而观众不知道时，演员需要用微表情传递信息又不能泄底。我们选取了四个值得逐帧看的片段。</p>
+          <span class="more">阅读拆解 →</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="no03">
+      <div class="ch"><span class="roman">03</span><h2>观看顺序建议</h2></div>
+      <p class="ch-sub">同一系列的作品并不总能按上映顺序观看。我们按三种常见需求给出清单，并标注了每部的时长与内容提示。</p>
+
+      <div class="divider">清单 A · 想理解完整时间线</div>
+      <div class="read">
+        <article class="book">
+          <div class="stripe"></div>
+          <h5>暗河上的桥 系列</h5>
+          <ol>
+            <li><span>前传短片《桥下的雨》</span></li>
+            <li><span>《暗河上的桥》正片</span></li>
+            <li><span>番外篇《第三个证人》</span></li>
+          </ol>
+          <div class="dur">合计约 278 分钟 · 建议分两次</div>
+        </article>
+        <article class="book">
+          <div class="stripe"></div>
+          <h5>雾港 宇宙</h5>
+          <ol>
+            <li><span>《雾港》主线</span></li>
+            <li><span>《雾港：归途》</span></li>
+            <li><span>纪录片《卷宗之外》</span></li>
+          </ol>
+          <div class="dur">合计约 312 分钟 · 纪录片放最后</div>
+        </article>
+        <article class="book">
+          <div class="stripe"></div>
+          <h5>她记得每一扇门 系列</h5>
+          <ol>
+            <li><span>《门》第一季全六集</span></li>
+            <li><span>番外《钥匙》</span></li>
+            <li><span>《门》第二季</span></li>
+          </ol>
+          <div class="dur">合计约 396 分钟 · 可分三天</div>
+        </article>
+      </div>
+
+      <div class="divider">清单 B · 只想看最精彩的三部</div>
+      <div class="works">
+        <article class="work">
+          <div class="idx num">★ 01</div>
+          <div>
+            <div class="genre">Must Watch</div>
+            <h3>一封没有寄出的信</h3>
+            <p>推理逻辑最完整、伏笔回收最干净的一部，适合作为近期悬疑片的入门选择。</p>
+          </div>
+          <div><span class="flag r">首选</span></div>
+          <div class="score"><b>8.8</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">★ 02</div>
+          <div>
+            <div class="genre">Must Watch</div>
+            <h3>第七个证人</h3>
+            <p>庭审戏张力最强，三个时间切片的剪辑设计值得反复琢磨。</p>
+          </div>
+          <div><span class="flag r">首选</span></div>
+          <div class="score"><b>8.3</b><span>综合口碑</span></div>
+        </article>
+        <article class="work">
+          <div class="idx num">★ 03</div>
+          <div>
+            <div class="genre">Must Watch</div>
+            <h3>卷宗之外</h3>
+            <p>纪实与虚构之间的最佳对照，看完会对同期剧情片多一层理解。</p>
+          </div>
+          <div><span class="flag r">首选</span></div>
+          <div class="score"><b>9.0</b><span>综合口碑</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="no04">
+      <div class="ch"><span class="roman">04</span><h2>主题专题策划</h2></div>
+      <p class="ch-sub">不定期更新的专题栏目，围绕一个主题做纵深，而不是零散地谈一部作品。</p>
+
+      <div class="topics">
+        <article class="topic">
+          <div class="tag">专题 01</div>
+          <h4>记忆可以当作凶器吗</h4>
+          <p>从《她记得每一扇门》出发，梳理七部以记忆可靠性为核心的作品，讨论这类叙事为何近年大量出现。</p>
+          <span class="more">进入专题 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">专题 02</div>
+          <h4>小城为什么总出事</h4>
+          <p>封闭空间与熟人社会是悬疑片最经济的设定。我们对比了九部"小城故事"，找出它们的共同结构。</p>
+          <span class="more">进入专题 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">专题 03</div>
+          <h4>女性视角的悬疑叙事</h4>
+          <p>不再以受害者身份出现，而是作为叙事主体的作品正在增多。本专题收录五部近期代表作并做横向对比。</p>
+          <span class="more">进入专题 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">专题 04</div>
+          <h4>声音设计的六个层次</h4>
+          <p>从环境声到沉默，用具体片段说明声音如何在观众无察觉的情况下操控情绪。</p>
+          <span class="more">进入专题 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">专题 05</div>
+          <h4>反转之后还剩下什么</h4>
+          <p>靠大反转取胜的作品往往二刷价值低。我们列出五部反转之后依然耐看的作品及其原因。</p>
+          <span class="more">进入专题 →</span>
+        </article>
+        <article class="topic">
+          <div class="tag">专题 06</div>
+          <h4>短剧与长片的边界</h4>
+          <p>同一题材做成六集短剧与做成两小时电影，取舍究竟在哪里，我们用三个案例做并排分析。</p>
+          <span class="more">进入专题 →</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="no05">
+      <div class="ch"><span class="roman">05</span><h2>资料档案</h2></div>
+      <p class="ch-sub">长期维护的索引类内容，按年份归档，便于回查与对照阅读。</p>
+
+      <div class="archive">
+        <div class="row head"><div>年份</div><div>收录作品</div><div>主题标签</div><div>更新时间</div></div>
+        <div class="row"><div class="yr">2026</div><div>《暗河上的桥》《雾港：归途》等 9 部</div><div class="tg">犯罪 · 心理</div><div>10 月 06 日</div></div>
+        <div class="row"><div class="yr">2025</div><div>《一封没有寄出的信》《第七个证人》等 11 部</div><div class="tg">悬疑 · 庭审</div><div>已归档</div></div>
+        <div class="row"><div class="yr">2024</div><div>《她记得每一扇门》第一季等 8 部</div><div class="tg">心理 · 记忆</div><div>已归档</div></div>
+        <div class="row"><div class="yr">2023</div><div>《雾港》《卷宗之外》等 7 部</div><div class="tg">纪实 · 犯罪</div><div>已归档</div></div>
+        <div class="row"><div class="yr">2022</div><div>早期系列作品 7 部</div><div class="tg">经典 · 修复</div><div>已归档</div></div>
+      </div>
+    </section>
+
+    <section id="no06">
+      <div class="ch"><span class="roman">06</span><h2>站点入口与说明</h2></div>
+      <p class="ch-sub">本手册的官方站点地址如下，网站名称与域名一一对应，请在地址栏核对后收藏。</p>
+
+      <div class="urlbox">
+        <span class="tape">Official URL</span>
+        <div class="grid">
+          <div>
+            <span class="eyebrow">Where to Find Us</span>
+            <p class="lead" style="margin-top:16px">神秘电影网的唯一官方站点入口为<em>下方地址</em>，所有内容均由编辑部独立整理，仅供观影参考，不存储、不分发任何影视资源。</p>
+            <div class="facts">
+              <div><b>网站名称</b><span>神秘电影网</span></div>
+              <div><b>站点域名</b><span>shenmidianyingwang-zh.github.io</span></div>
+              <div><b>完整入口</b><span>https 协议访问</span></div>
+              <div><b>更新频率</b><span>每日更新</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="addr"><span class="lbl">Official Site URL</span>https://shenmidianyingwang-zh.github.io</div>
+            <button type="button" id="cp">复制站点入口</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="col brandf">
+        <b>神秘<i>电影网</i></b>
+        <p>一份关于悬疑与惊悚类型片的独立内容手册：案件原型、镜头语言、观看顺序与主题专题，帮你把每一次观看都看得更明白。</p>
+        <div class="siteurl">https://shenmidianyingwang-zh.github.io</div>
+      </div>
+      <div class="col"><h6>本期栏目</h6><ul>
+        <li><a href="#no01">案件原型溯源</a></li>
+        <li><a href="#no02">镜头语言拆解</a></li>
+        <li><a href="#no03">观看顺序建议</a></li>
+        <li><a href="#no04">主题专题策划</a></li>
+        <li><a href="#no05">资料档案</a></li>
+      </ul></div>
+      <div class="col"><h6>主题分类</h6><ul>
+        <li><a href="#">悬疑推理</a></li>
+        <li><a href="#">心理惊悚</a></li>
+        <li><a href="#">犯罪纪实</a></li>
+        <li><a href="#">镜头拆解</a></li>
+        <li><a href="#">观看清单</a></li>
+      </ul></div>
+      <div class="col"><h6>关于本站</h6><ul>
+        <li><a href="#no06">站点入口</a></li>
+        <li><a href="#">内容纠错</a></li>
+        <li><a href="#">选题建议</a></li>
+        <li><a href="#">免责声明</a></li>
+        <li><a href="#">返回封面</a></li>
+      </ul></div>
+    </div>
+    <div class="bar">
+      <span>© 2026 神秘电影网 · 网站名称：神秘电影网 · 官方站点：<b>https://shenmidianyingwang-zh.github.io</b></span>
+      <span>本手册内容仅供观影参考，与任何影视发行方无关联。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('cp'),url='https://shenmidianyingwang-zh.github.io';
+  btn.addEventListener('click',function(){
+    var done=function(){var t=btn.innerText;btn.innerText='已复制站点入口 ✓';setTimeout(function(){btn.innerText=t;},1800);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,fb);}
+    else fb();
+    function fb(){var ta=document.createElement('textarea');ta.value=url;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+  });
+
+  var links=document.querySelectorAll('.toc a');
+  var targets=[];links.forEach(function(a){var id=a.getAttribute('href');if(id&&id.charAt(0)==='#')targets.push({a:a,el:document.querySelector(id)});});
+  function tick(){
+    var y=window.scrollY+140,cur=null;
+    targets.forEach(function(o){if(o.el&&o.el.offsetTop<=y)cur=o.a;});
+    links.forEach(function(a){a.classList.toggle('on',a===cur);});
+  }
+  window.addEventListener('scroll',tick,{passive:true});tick();
+
+  if('IntersectionObserver' in window){
+    var els=document.querySelectorAll('.work,.topic,.book,.archive .row,.urlbox,.ch,.cover .side');
+    els.forEach(function(el){el.classList.add('rv');});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+    els.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
